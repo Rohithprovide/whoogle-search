@@ -171,7 +171,7 @@ select {
 }
 
 path {
-    fill: var(--whoogle-dark-logo);
+    fill: var(--whoogle-logo);
 }
 
 .header-div {
