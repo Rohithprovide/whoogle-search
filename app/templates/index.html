@@ -23,6 +23,7 @@
     <script type="text/javascript" src="{{ cb_url('controller.js') }}"></script>
     <link rel="search" href="opensearch.xml" type="application/opensearchdescription+xml" title="Whoogle Search">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ cb_url('logo.css') }}">
     {% if config.theme %}
         {% if config.theme == 'system' %}
@@ -60,7 +61,7 @@
 </head>
 <body id="main">
 <div class="search-container">
-    <div class="logo-container">
+    <div class="logo-container homepage-logo">
         {{ logo|safe }}
     </div>
     <form id="search-form" action="search" method="{{ 'get' if config.get_only else 'post' }}">
@@ -69,17 +70,21 @@
                 {% if config.preferences %}
                     <input type="hidden" name="preferences" value="{{ config.preferences }}" />
                 {% endif %}
-                <input
-                        type="text"
-                        name="q"
-                        id="search-bar"
-                        class="home-search"
-                        autofocus="autofocus"
-                        autocapitalize="none"
-                        spellcheck="false"
-                        autocorrect="off"
-                        autocomplete="off"
-                        dir="auto">
+                <div class="search-input-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+                    <input
+                            type="text"
+                            name="q"
+                            id="search-bar"
+                            class="home-search"
+                            autofocus="autofocus"
+                            autocapitalize="none"
+                            spellcheck="false"
+                            autocorrect="off"
+                            autocomplete="off"
+                            dir="auto">
+                    <i class="fa-solid fa-microphone search-icon-right"></i>
+                </div>
             </div>
             <input type="submit" id="search-submit" value="{{ translation['search'] }}">
         </div>
