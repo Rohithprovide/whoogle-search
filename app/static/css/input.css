@@ -1,6 +1,7 @@
 #search-bar {
     background: transparent !important;
     padding-right: 50px;
+    padding-left: 45px !important;
 }
 
 #search-reset {
